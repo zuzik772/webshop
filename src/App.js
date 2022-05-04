@@ -1,5 +1,5 @@
-import "./App.css";
 import { useState, useEffect } from "react";
+import "./App.css";
 import Nav from "./components/Nav";
 import ProductList from "./components/ProductList";
 import BasketContainer from "./components/BasketContainer";
@@ -16,13 +16,12 @@ function App() {
     getData();
   }, []);
 
-
   return (
     <div className="App">
       <Nav />
       <main>
         <ProductList products={products} setBasket={setBasket} />
-        <BasketContainer setBasket={setBasket} />
+        <BasketContainer setBasket={setBasket} basket={basket}/>
       </main>
     </div>
   );
