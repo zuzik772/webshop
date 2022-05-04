@@ -6,7 +6,7 @@ export default function ProductList({ products, setBasket }) {
       <section>
         <h2>Product List</h2>
         {products.map((product) => (
-          <Product key={product.id} setBasket={setBasket} {...product} />
+          <Product key={product.id} setBasket={setBasket} product={product} />
         ))}
       </section>
     </>

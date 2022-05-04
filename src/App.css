@@ -27,6 +27,7 @@ button {
   border-radius: 5px;
   text-align: center;
   font-weight: 600;
+  cursor: pointer;
 }
 
 img {

@@ -1,14 +1,17 @@
 import { useState } from "react";
 
 export default function Product(props) {
+  function buyProduct() {
+    props.setBasket((oldState) => [...oldState, props.product]);
+  }
   return (
     <article>
-      <h4>{props.usagetype}</h4>
-      <p>{props.brandname}</p>
-      <p>{props.productdisplayname}</p>
-      <img src={`https://kea-alt-del.dk/t7/images/webp/640/${props.id}.webp`} alt="" />
-      <p>{props.price}kr</p>
-      <button>add to basket</button>
+      <h4>{props.product.usagetype}</h4>
+      <p>{props.product.brandname}</p>
+      <p>{props.product.productdisplayname}</p>
+      <img src={`https://kea-alt-del.dk/t7/images/webp/640/${props.product.id}.webp`} alt="" />
+      <p>{props.product.price}kr</p>
+      <button onClick={buyProduct}>add to basket</button>
     </article>
   );
 }
