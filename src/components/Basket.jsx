@@ -1,8 +1,15 @@
-function Basket() {
+function Basket(props) {
   return (
     <>
-      <p>number of items</p>
-      <p>price</p>
+      <ul>
+        {props.basket.map((item) => {
+          return (
+            <li>
+              {item.productdisplayname} ${item.price}
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 }
