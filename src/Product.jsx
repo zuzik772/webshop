@@ -1,10 +1,22 @@
-export default function Product() {
+// import { useState } from "react";
+
+export default function Product(props) {
+  // const [count, setCount] = useState(0);
+  // function countHandler() {
+  //   console.log(count);
+  //   setCount = count + 1;
+  // }
+  function handleBasket() {
+props.setBasket(props.basket)
+  }
   return (
     <article>
-      <h3>title</h3>
-      <img src="" alt="" />
-      <p>price</p>
-      <button>add to basket</button>
+      <h4>{props.usagetype}</h4>
+      <p>{props.brandname}</p>
+      <p>{props.productdisplayname}</p>
+      <img src={`https://kea-alt-del.dk/t7/images/webp/640/${props.id}.webp`} alt="" />
+      <p>{props.price}kr</p>
+      <button onClick={handleBasket}>add to basket</button>
     </article>
   );
 }
