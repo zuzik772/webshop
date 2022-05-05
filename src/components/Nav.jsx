@@ -1,8 +1,10 @@
 export default function Nav() {
   return (
-    <ul>
-      <li>Home</li>
-      <li>Products</li>
-    </ul>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Products</li>
+      </ul>
+    </nav>
   );
 }

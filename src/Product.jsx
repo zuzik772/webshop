@@ -3,6 +3,9 @@ import { useState } from "react";
 export default function Product(props) {
   function buyProduct() {
     props.setBasket((oldState) => [...oldState, props.product]);
+    // ternary operator
+    
+
   }
   return (
     <article>

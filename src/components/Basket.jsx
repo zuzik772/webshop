@@ -1,6 +1,6 @@
 function Basket(props) {
   return (
-    <>
+    <aside>
       <ul>
         {props.basket.map((item) => {
           return (
@@ -10,7 +10,7 @@ function Basket(props) {
           );
         })}
       </ul>
-    </>
+    </aside>
   );
 }
 

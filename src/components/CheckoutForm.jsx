@@ -1,10 +1,14 @@
 function CheckoutForm() {
   return (
     <form>
-      <label htmlFor="name">Name</label>
-      <input type="text" />
-      <label htmlFor="email">Email</label>
-      <input type="email" />
+      <div>
+        <label htmlFor="name">Name</label>
+        <input type="text" />
+      </div>
+      <div>
+        <label htmlFor="email">Email</label>
+        <input type="email" />
+      </div>
     </form>
   );
 }
