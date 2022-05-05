@@ -2,16 +2,24 @@
 
 export default function Product(props) {
   function buyProduct() {
-    props.setBasket((oldState) => [...oldState, props.product]);
-    // ternary operator
-    // props.setBasket((oldState) => oldState.filter((product) => product.id === id))
-    //   ? setCount + 1
-    //   : setCount;
-    // handleProduct();
+    if (props.basket.find((item) => item.id === props.product.id)) {
+      console.log("got ya already");
+      // create new array
+      props.setBasket((old) =>
+        old.map((item) => {
+          if (item.id === props.product.id) {
+            const copy = { ...item };
+            copy.amount++;
+            return copy;
+          }
+          return item;
+        })
+      );
+    } else {
+      props.setBasket((oldState) => [...oldState, { ...props.product, amount: 1 }]);
+    }
   }
-  // function handleProduct(id) {
-  //   props.setBasket((oldState) => oldState.filter((product) => product.id === id))? count+1 : count;
-  // }
+
   return (
     <article>
       <h4>{props.product.usagetype}</h4>

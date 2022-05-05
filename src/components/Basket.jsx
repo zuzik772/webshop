@@ -1,7 +1,7 @@
 function Basket(props) {
   const initialValue = 0;
   const sumWithInitial = props.basket.reduce(
-    (previousValue, currentValue) => previousValue + currentValue.price,
+    (previousValue, currentValue) => previousValue + currentValue.amount * currentValue.price,
     initialValue
   );
   function removeItem(id) {
@@ -12,12 +12,10 @@ function Basket(props) {
       <ul>
         {props.basket.map((item) => {
           return (
-            <>
-              <li>
-                {item.productdisplayname} ${item.price}
-                <button onClick={() => removeItem(item.id)}>X</button>
-              </li>
-            </>
+            <li key={item.id}>
+              {item.amount}x {item.productdisplayname} ${item.price}
+              <button onClick={() => removeItem(item.id)}>X</button>
+            </li>
           );
         })}
       </ul>

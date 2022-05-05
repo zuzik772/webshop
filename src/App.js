@@ -7,7 +7,7 @@ import BasketContainer from "./components/BasketContainer";
 function App() {
   const [products, setProducts] = useState([]);
   const [basket, setBasket] = useState([]);
-  
+
   useEffect(() => {
     async function getData() {
       const res = await fetch("https://kea-alt-del.dk/t7/api/products");
@@ -21,8 +21,8 @@ function App() {
     <div className="App">
       <Nav />
       <main>
-        <ProductList products={products} setBasket={setBasket} />
-        <BasketContainer setBasket={setBasket} basket={basket}/>
+        <ProductList products={products} basket={basket} setBasket={setBasket} />
+        <BasketContainer setBasket={setBasket} basket={basket} />
       </main>
     </div>
   );
